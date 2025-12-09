@@ -151,14 +151,31 @@ export function MessageThread({ conversation }: MessageThreadProps) {
       {/* Input */}
       <div className="p-4 border-t border-gray-800">
         <div className="flex items-center gap-2 mb-3">
-          <button className="px-4 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-lg hover:opacity-90 transition flex items-center gap-2">
-            <DollarSign className="w-4 h-4" />
-            <span className="text-sm">Send Tip</span>
-          </button>
           <button className="px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition flex items-center gap-2">
             <Image className="w-4 h-4" />
             <span className="text-sm">Request Content</span>
           </button>
+        </div>
+        <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border border-yellow-600/30 rounded-lg p-3 mb-3">
+          <div className="flex items-center gap-2 mb-2">
+            <DollarSign className="w-4 h-4 text-yellow-500" />
+            <span className="text-sm text-yellow-500">Unlock messaging with a tip</span>
+          </div>
+          <p className="text-xs text-gray-400 mb-3">Send a tip to start the conversation</p>
+          <div className="flex gap-2">
+            <button className="flex-1 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-lg hover:opacity-90 transition">
+              $5
+            </button>
+            <button className="flex-1 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-lg hover:opacity-90 transition">
+              $10
+            </button>
+            <button className="flex-1 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-lg hover:opacity-90 transition">
+              $20
+            </button>
+            <button className="flex-1 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-lg hover:opacity-90 transition">
+              Custom
+            </button>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           <button className="p-2 hover:bg-gray-800 rounded-full transition">
@@ -172,14 +189,15 @@ export function MessageThread({ conversation }: MessageThreadProps) {
             value={messageText}
             onChange={(e) => setMessageText(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-            placeholder="Type a message..."
+            placeholder="Type a message and send with a tip..."
             className="flex-1 bg-[#1a1a1a] border border-gray-800 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-blue-500"
           />
           <button
             onClick={handleSend}
-            className="p-2 bg-gradient-to-r from-blue-600 to-pink-600 rounded-full hover:opacity-90 transition"
+            className="px-4 py-2 bg-gradient-to-r from-yellow-600 to-orange-600 rounded-full hover:opacity-90 transition flex items-center gap-2"
           >
-            <Send className="w-5 h-5" />
+            <DollarSign className="w-4 h-4" />
+            <span className="text-sm">Tip & Send</span>
           </button>
         </div>
       </div>
