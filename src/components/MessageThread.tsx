@@ -150,12 +150,6 @@ export function MessageThread({ conversation }: MessageThreadProps) {
 
       {/* Input */}
       <div className="p-4 border-t border-gray-800">
-        <div className="flex items-center gap-2 mb-3">
-          <button className="px-4 py-2 bg-gray-800 rounded-lg hover:bg-gray-700 transition flex items-center gap-2">
-            <Image className="w-4 h-4" />
-            <span className="text-sm">Request Content</span>
-          </button>
-        </div>
         <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 border border-yellow-600/30 rounded-lg p-3 mb-3">
           <div className="flex items-center gap-2 mb-2">
             <DollarSign className="w-4 h-4 text-yellow-500" />
