@@ -1,5 +1,6 @@
 import { Search, Bell, MessageCircle } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export function TopBar() {
   return (
@@ -16,6 +17,7 @@ export function TopBar() {
         </div>
       </div>
       <div className="flex items-center gap-4">
+        <ConnectButton />
         <button className="relative p-2 hover:bg-gray-800 rounded-full transition">
           <MessageCircle className="w-5 h-5" />
           <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -24,7 +26,7 @@ export function TopBar() {
           <Bell className="w-5 h-5" />
           <span className="absolute top-1 right-1 w-2 h-2 bg-pink-500 rounded-full"></span>
         </button>
-        <ImageWithFallback 
+        <ImageWithFallback
           src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop"
           alt="Profile"
           className="w-10 h-10 rounded-full object-cover cursor-pointer border-2 border-blue-500"

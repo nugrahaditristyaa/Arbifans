@@ -1,4 +1,5 @@
 import { PostCard } from './PostCard';
+import { motion } from 'framer-motion';
 
 export function Feed() {
   const posts = [
@@ -49,11 +50,32 @@ export function Feed() {
     },
   ];
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <div className="px-6 py-6 space-y-6">
+    <motion.div
+      className="px-6 py-6 space-y-6"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       {posts.map((post) => (
-        <PostCard key={post.id} post={post} />
+        <motion.div key={post.id} variants={itemVariants}>
+          <PostCard post={post} />
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
